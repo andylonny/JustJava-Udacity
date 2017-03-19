@@ -2,6 +2,7 @@ package com.example.android.justjava;
 
 import android.content.Context;
 import android.content.Intent;
+import android.icu.text.NumberFormat;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -47,7 +48,7 @@ public class MainActivity extends AppCompatActivity {
 
         Intent intent = new Intent(Intent.ACTION_SENDTO);
         intent.setData(Uri.parse("mailto:")); // only email apps should handle this
-        intent.putExtra(Intent.EXTRA_SUBJECT, "Just Java order for " + name);
+        intent.putExtra(Intent.EXTRA_SUBJECT, getString(R.string.order_summary_email_subject) + " " + name);
         intent.putExtra(Intent.EXTRA_TEXT, priceMessage);
         if (intent.resolveActivity(getPackageManager()) != null) {
             startActivity(intent);
@@ -65,12 +66,12 @@ public class MainActivity extends AppCompatActivity {
      * @return text summary
      */
     private String createOrderSummary(String name, int price, boolean addWhippedCream, boolean addChocolate) {
-        String priceMessage = "Name: " + name +
-                "\nAdd Whipped Cream? " + addWhippedCream +
-                "\nAdd Chocolate? " + addChocolate +
-                "\nQuantity: " + quantity +
-                "\nTotal: $" + price +
-                "\nThank You!";
+        String priceMessage = getString(R.string.order_summary_name, name) +
+                "\n" + getString(R.string.order_summary_whipped_cream) + " " + addWhippedCream +
+                "\n" + getString(R.string.order_summary_chocolate) + " " + addChocolate +
+                "\n" + getString(R.string.order_summary_quantity) + " " + quantity +
+                "\n" + getString(R.string.order_summary_price) + " " + price +
+                "\n" + getString(R.string.thank_you);
         return priceMessage;
     }
 
@@ -105,7 +106,7 @@ public class MainActivity extends AppCompatActivity {
     public void increment(View view) {
         if (quantity == 99) {
             Context context = getApplicationContext();
-            CharSequence text = "The quantity can't be greater than 99";
+            CharSequence text = getString(R.string.too_many_coffees);
             int duration = Toast.LENGTH_SHORT;
 
             Toast toast = Toast.makeText(context, text, duration);
@@ -124,7 +125,7 @@ public class MainActivity extends AppCompatActivity {
     public void decrement(View view) {
         if (quantity == 1) {
             Context context = getApplicationContext();
-            CharSequence text = "The quantity can't be less than 1";
+            CharSequence text = getString(R.string.too_few_coffees);
             int duration = Toast.LENGTH_SHORT;
 
             Toast toast = Toast.makeText(context, text, duration);
