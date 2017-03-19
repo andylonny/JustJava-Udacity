@@ -15,4 +15,8 @@
     <string name="order_summary_whipped_cream">"Adiciona chantilly? "</string>
     <string name="too_few_coffees">Você não pode pedir menos que 1 café!</string>
     <string name="too_many_coffees">Você não pode pedir mais que 1 café!</string>
+    <string name="add_chocolate">Sim</string>
+    <string name="add_whipped_cream">Sim</string>
+    <string name="no_chocolate">Não</string>
+    <string name="no_whipped_cream">Não</string>
 </resources>

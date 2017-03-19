@@ -60,9 +60,19 @@
      -->
     <string name="order_summary_email_subject">Just Java order for <xliff:g id="name" example = "Amy"></xliff:g></string>
 
+    <string name="add_whipped_cream">Yes</string>
+
+    <string name="no_whipped_cream">No</string>
+
+    <string name="add_chocolate">Yes</string>
+
+    <string name="no_chocolate">No</string>
+
     <!-- Message displayed when the customer tries to request more than 100 coffees -->
     <string name="too_many_coffees">You cannot order more than 99 coffees!</string>
 
     <!-- Message displayed when the customer tries to request less than 1 coffee -->
     <string name="too_few_coffees">You cannot order less than 1 coffee!</string>
+
+
 </resources>

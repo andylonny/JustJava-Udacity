@@ -38,13 +38,25 @@ public class MainActivity extends AppCompatActivity {
         //Figure out if the user wants whipped cream topping
         CheckBox whippedCreamCheckBox = (CheckBox) findViewById(R.id.whipped_cream_checkbox);
         boolean hasWhippedCream = whippedCreamCheckBox.isChecked();
+        String addWhippedCream = String.valueOf(hasWhippedCream);
+        if (hasWhippedCream) {
+            addWhippedCream = getString(R.string.add_whipped_cream);
+        } else {
+            addWhippedCream = getString(R.string.no_whipped_cream);
+        }
 
         //Figure out if the user wants chocolate topping
         CheckBox chocolateCheckBox = (CheckBox) findViewById(R.id.chocolate_checkbox);
         boolean hasChocolate = chocolateCheckBox.isChecked();
+        String addChocolate = String.valueOf(hasChocolate);
+        if (hasChocolate) {
+            addChocolate = getString(R.string.add_chocolate);
+        } else {
+            addChocolate = getString(R.string.no_chocolate);
+        }
 
         int price = calculatePrice(hasWhippedCream, hasChocolate);
-        String priceMessage = createOrderSummary(name, price, hasWhippedCream, hasChocolate);
+        String priceMessage = createOrderSummary(name, price, addWhippedCream, addChocolate);
 
         Intent intent = new Intent(Intent.ACTION_SENDTO);
         intent.setData(Uri.parse("mailto:")); // only email apps should handle this
@@ -65,7 +77,7 @@ public class MainActivity extends AppCompatActivity {
      * @param addChocolate is whether or not the user wants chocolate topping
      * @return text summary
      */
-    private String createOrderSummary(String name, int price, boolean addWhippedCream, boolean addChocolate) {
+    private String createOrderSummary(String name, int price, String addWhippedCream, String addChocolate) {
         String priceMessage = getString(R.string.order_summary_name, name) +
                 "\n" + getString(R.string.order_summary_whipped_cream) + " " + addWhippedCream +
                 "\n" + getString(R.string.order_summary_chocolate) + " " + addChocolate +
