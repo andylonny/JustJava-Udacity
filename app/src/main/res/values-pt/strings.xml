@@ -7,7 +7,7 @@
     <string name="order">Pedido</string>
     <string name="order_summary_chocolate">Adiciona chocolate? <xliff:g id="addChocolate" example="true" /></string>
     <string name="whipped_cream">Chantilly</string>
-    <string name="quantity">Quantidade:</string>
+    <string name="quantity">Quantidade</string>
     <string name="order_summary_email_subject">Somente Java pedido para <xliff:g id="name" example="Amy" /></string>
     <string name="order_summary_name">Nome: <xliff:g id="name" example="Amy">%s</xliff:g></string>
     <string name="order_summary_price">Total: $</string>

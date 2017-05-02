@@ -38,23 +38,14 @@ public class MainActivity extends AppCompatActivity {
         //Figure out if the user wants whipped cream topping
         CheckBox whippedCreamCheckBox = (CheckBox) findViewById(R.id.whipped_cream_checkbox);
         boolean hasWhippedCream = whippedCreamCheckBox.isChecked();
-        String addWhippedCream = String.valueOf(hasWhippedCream);
-        if (hasWhippedCream) {
-            addWhippedCream = getString(R.string.add_whipped_cream);
-        } else {
-            addWhippedCream = getString(R.string.no_whipped_cream);
-        }
+        String addWhippedCream = getString(R.string.add_whipped_cream);
+        if (!hasWhippedCream) addWhippedCream = getString(R.string.no_whipped_cream);
 
         //Figure out if the user wants chocolate topping
         CheckBox chocolateCheckBox = (CheckBox) findViewById(R.id.chocolate_checkbox);
         boolean hasChocolate = chocolateCheckBox.isChecked();
-        String addChocolate = String.valueOf(hasChocolate);
-        if (hasChocolate) {
-            addChocolate = getString(R.string.add_chocolate);
-        } else {
-            addChocolate = getString(R.string.no_chocolate);
-        }
-
+        String addChocolate = getString(R.string.add_chocolate);
+        if (!hasChocolate) addChocolate = getString(R.string.no_chocolate);
         int price = calculatePrice(hasWhippedCream, hasChocolate);
         String priceMessage = createOrderSummary(name, price, addWhippedCream, addChocolate);
 

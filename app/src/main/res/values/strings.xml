@@ -15,7 +15,7 @@
     <string name="chocolate">Chocolate</string>
 
     <!-- Hint the text display for quantity. [CHAR LIMIT = 20] -->
-    <string name="quantity">Quantity:</string>
+    <string name="quantity">Quantity</string>
 
     <!-- Hint the text display for order. [CHAR LIMIT = 20] -->
     <string name="order">Order</string>
